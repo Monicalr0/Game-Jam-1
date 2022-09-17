@@ -30,5 +30,8 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rb.AddRelativeForce(new Vector3(xMovement, 0, yMovement) * speed);
+        if (transform.position.y != 0) {
+            transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+        }
     }
 }

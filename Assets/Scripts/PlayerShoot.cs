@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
+    public AudioSource mainAudio;
     public GameObject projectile;
     public float zOffset = 10;
     // Start is called before the first frame update
@@ -18,6 +19,7 @@ public class PlayerShoot : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(projectile, transform.position + (transform.forward * zOffset), transform.rotation);
+            mainAudio.Play();
         }
     }
 }
